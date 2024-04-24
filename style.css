@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Rancho&display=swap");
+body {
+    background-color: #272351;
+}
+.container {
+    display: flex;
+    direction: rtl;
+    align-items: center;
+    justify-content: space-around;
+}
+.left {
+    max-height: 98vh;
+    overflow-y: auto;
+    min-width: 370px;
+}
+.right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.left,
+.right {
+    position: relative;
+}
+.left .item {
+    width: 300px;
+    min-width: 300px;
+    height: 100px;
+    background-color: #adafb4d9;
+    margin: 30px auto;
+    padding: 10px;
+    border-radius: 40px;
+    transition: 0.5s;
+    text-align: center;
+    cursor: grab;
+}
+.left .item img {
+    height: 100%;
+}
+.left .item:hover {
+    background-color: #5838d1;
+}
+.mockup {
+    width: 500px;
+    height: 600px;
+    background-image: url(public/imgs/shirt.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0 0 40px #121212);
+    position: relative;
+}
+.graphic {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.3s;
+}
+.graphic.drag {
+    border: 5px dotted #232020;
+}
+.graphic img {
+    width: 100%;
+}
+#text {
+    color: #fff;
+    font-family: "Rancho", cursive;
+    text-align: center;
+    font-size: 3rem;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column-reverse;
+        height: 98vh;
+    }
+    .left {
+        display: flex;
+        overflow-x: auto;
+        max-width: 100%;
+        gap: 1rem;
+    }
+    #text {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mockup {
+        width: 300px;
+        height: 400px;
+    }
+    .graphic {
+        width: 115px;
+        height: 115px;
+        top: 125px;
+    }
+}
